@@ -1,0 +1,196 @@
+{
+  "v": 2,
+  "globalParameters": {},
+  "kindParameters": {
+    "Color Palette": {
+      "fileName": "/home/runner/work/my-awesome-design-system2/my-awesome-design-system2/design-system/src/color.stories.mdx",
+      "framework": "react"
+    },
+    "Components/Button": {
+      "fileName": "/home/runner/work/my-awesome-design-system2/my-awesome-design-system2/design-system/src/components/Button/Button.stories.mdx",
+      "framework": "react"
+    },
+    "Components/Carousel": {
+      "fileName": "/home/runner/work/my-awesome-design-system2/my-awesome-design-system2/design-system/src/components/Carousel/Carousel.stories.mdx",
+      "framework": "react"
+    },
+    "Components/Icon": {
+      "fileName": "/home/runner/work/my-awesome-design-system2/my-awesome-design-system2/design-system/src/components/Icon/Icon.stories.mdx",
+      "framework": "react"
+    },
+    "Components/Select": {
+      "fileName": "/home/runner/work/my-awesome-design-system2/my-awesome-design-system2/design-system/src/components/Select/Select.stories.mdx",
+      "framework": "react"
+    },
+    "Components/SummaryTable": {
+      "fileName": "/home/runner/work/my-awesome-design-system2/my-awesome-design-system2/design-system/src/components/SummaryTable/SummaryTable.stories.mdx",
+      "framework": "react"
+    },
+    "Intro": {
+      "fileName": "/home/runner/work/my-awesome-design-system2/my-awesome-design-system2/design-system/src/intro.stories.mdx",
+      "framework": "react"
+    },
+    "Typography": {
+      "fileName": "/home/runner/work/my-awesome-design-system2/my-awesome-design-system2/design-system/src/typography.stories.mdx",
+      "framework": "react"
+    }
+  },
+  "stories": {
+    "color-palette--page": {
+      "id": "color-palette--page",
+      "name": "Page",
+      "kind": "Color Palette",
+      "story": "Page",
+      "parameters": {
+        "docsOnly": true,
+        "__id": "color-palette--page"
+      }
+    },
+    "components-button--default-story": {
+      "id": "components-button--default-story",
+      "name": "Default",
+      "kind": "Components/Button",
+      "story": "Default",
+      "parameters": {
+        "__id": "components-button--default-story"
+      }
+    },
+    "components-button--outline": {
+      "id": "components-button--outline",
+      "name": "Outline",
+      "kind": "Components/Button",
+      "story": "Outline",
+      "parameters": {
+        "__id": "components-button--outline"
+      }
+    },
+    "components-button--link": {
+      "id": "components-button--link",
+      "name": "Link",
+      "kind": "Components/Button",
+      "story": "Link",
+      "parameters": {
+        "__id": "components-button--link"
+      }
+    },
+    "components-button--borderless": {
+      "id": "components-button--borderless",
+      "name": "Borderless",
+      "kind": "Components/Button",
+      "story": "Borderless",
+      "parameters": {
+        "__id": "components-button--borderless"
+      }
+    },
+    "components-button--stretched": {
+      "id": "components-button--stretched",
+      "name": "Stretched",
+      "kind": "Components/Button",
+      "story": "Stretched",
+      "parameters": {
+        "__id": "components-button--stretched"
+      }
+    },
+    "components-button--colors": {
+      "id": "components-button--colors",
+      "name": "Colors",
+      "kind": "Components/Button",
+      "story": "Colors",
+      "parameters": {
+        "__id": "components-button--colors"
+      }
+    },
+    "components-button--button-with-icon": {
+      "id": "components-button--button-with-icon",
+      "name": "Button with Icon",
+      "kind": "Components/Button",
+      "story": "Button with Icon",
+      "parameters": {
+        "__id": "components-button--button-with-icon"
+      }
+    },
+    "components-carousel--default-story": {
+      "id": "components-carousel--default-story",
+      "name": "Default",
+      "kind": "Components/Carousel",
+      "story": "Default",
+      "parameters": {
+        "__id": "components-carousel--default-story"
+      }
+    },
+    "components-icon--all": {
+      "id": "components-icon--all",
+      "name": "All",
+      "kind": "Components/Icon",
+      "story": "All",
+      "parameters": {
+        "__id": "components-icon--all"
+      }
+    },
+    "components-icon--size": {
+      "id": "components-icon--size",
+      "name": "Size",
+      "kind": "Components/Icon",
+      "story": "Size",
+      "parameters": {
+        "__id": "components-icon--size"
+      }
+    },
+    "components-icon--colors": {
+      "id": "components-icon--colors",
+      "name": "Colors",
+      "kind": "Components/Icon",
+      "story": "Colors",
+      "parameters": {
+        "__id": "components-icon--colors"
+      }
+    },
+    "components-select--default-story": {
+      "id": "components-select--default-story",
+      "name": "Default",
+      "kind": "Components/Select",
+      "story": "Default",
+      "parameters": {
+        "__id": "components-select--default-story"
+      }
+    },
+    "components-select--with-default-text": {
+      "id": "components-select--with-default-text",
+      "name": "With default text",
+      "kind": "Components/Select",
+      "story": "With default text",
+      "parameters": {
+        "__id": "components-select--with-default-text"
+      }
+    },
+    "components-summarytable--default-story": {
+      "id": "components-summarytable--default-story",
+      "name": "Default",
+      "kind": "Components/SummaryTable",
+      "story": "Default",
+      "parameters": {
+        "__id": "components-summarytable--default-story"
+      }
+    },
+    "intro--page": {
+      "id": "intro--page",
+      "name": "Page",
+      "kind": "Intro",
+      "story": "Page",
+      "parameters": {
+        "docsOnly": true,
+        "__id": "intro--page"
+      }
+    },
+    "typography--page": {
+      "id": "typography--page",
+      "name": "Page",
+      "kind": "Typography",
+      "story": "Page",
+      "parameters": {
+        "docsOnly": true,
+        "__id": "typography--page"
+      }
+    }
+  }
+}

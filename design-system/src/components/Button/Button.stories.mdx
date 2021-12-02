@@ -1,0 +1,77 @@
+import { ArgsTable, Meta, Canvas, Story } from "@storybook/addon-docs";
+import { config, withDesign } from "storybook-addon-designs";
+import Icon, { icons } from "../Icon";
+import Button from "../Button";
+import { colors as themeColors } from "../../tokens";
+
+<Meta title="Components/Button" decorators={[withDesign]} />
+
+## Buttons
+
+Button component provides interfaces for all types of the buttons. Different types of the buttons are coded as different components and imported here.
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      // Configuration for design plugin, which allows to display linked Figma frame
+      design: config({
+        type: "figma",
+        // replace this url with your own design file to link:
+        url:
+          "https://www.figma.com/file/GDxXj0FoQ2ppNCAMcPZpmV/Workshop-starter-template?node-id=113%3A3473",
+      }),
+    }}
+    // Props values for the story
+    args={{ label: "Button", disable: false }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+  <Story name="Outline" args={{ label: "Button", isOutline: true }}>
+    {(args) => <Button {...args} />}
+  </Story>
+  <Story name="Link" args={{ label: "Button", isOutline: true, href: "https://varya.me", as: "a" }}>
+    {(args) => <Button {...args} />}
+  </Story>
+  <Story name="Borderless" args={{ label: "Button", isBorderless: true}}>
+    {(args) => <Button {...args} />}
+  </Story>
+  <Story name="Stretched" args={{ label: "Button", isStretched: true }}>
+    {(args) => <Button {...args} />}
+  </Story>
+  <Story
+    name="Colors"
+    // Custom select control, which receives values from the name of color tokens
+    argTypes={{
+      color: { control: { type: "select" }, options: Object.keys(themeColors) },
+    }}
+    args={{ label: "Button", color: "secondary500" }}
+  >
+    {({ color, ...args }) => {
+      // Resolve color rgb value from color name, which we receive from select control
+      const colorValue = themeColors[color];
+      return <Button color={colorValue} {...args} />;
+    }}
+  </Story>
+  <Story
+    name="Button with Icon"
+    argTypes={{
+      name: { control: { type: "select" },  options: Object.keys(icons) },
+      color: { control: { type: "select" },  options: Object.keys(themeColors) },
+    }}
+    args={{ isOutline: true, name: "arrowBack" }}
+  >
+    {({ name, color, ...args }) => {
+      const colorValue = themeColors[color];
+      return (
+        <Button color={colorValue} {...args}>
+          <Icon name={name} />
+        </Button>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Button} />

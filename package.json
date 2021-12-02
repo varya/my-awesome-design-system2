@@ -1,0 +1,48 @@
+{
+  "name": "hands-on-workshop",
+  "version": "0.0.0",
+  "description": "A starter repository for Hands-on with Design systems workshop",
+  "author": "Varya Stepanova <mail@varya.me>",
+  "main": "https://github.com/bridge-design/hands-on-workshop#readme",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "design-system",
+    "product"
+  ],
+  "scripts": {
+    "start": "yarn workspace design-system start",
+    "tokens": "yarn workspace design-system tokens",
+    "design-system": "yarn workspace design-system start",
+    "design-system:build": "yarn workspace design-system build",
+    "design-system:version": "yarn workspace design-system version",
+    "storybook:build": "yarn workspace design-system storybook:build",
+    "add-component": "yarn workspace design-system add-component",
+    "test": "yarn workspace design-system creevey",
+    "test:update": "yarn workspace design-system creevey --update",
+    "test:ui": "yarn workspace design-system creevey --ui",
+    "product": "yarn workspace product start",
+    "product:build": "yarn workspace product build",
+    "product:version": "yarn workspace product version",
+    "deploy:product": "gh-pages -d product/build && yarn deploy:storybook",
+    "deploy:storybook": "gh-pages -d design-system/storybook-static -e storybook"
+  },
+  "eslintIgnore": [
+    "product",
+    "design-system",
+    "webpack.config.js",
+    "webpack.product.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bridge-design/hands-on-workshop.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "styled-components"
+  ],
+  "resolutions": {
+    "babel-loader": "8.1.0"
+  }
+}

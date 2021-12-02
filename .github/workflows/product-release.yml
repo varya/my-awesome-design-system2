@@ -1,0 +1,76 @@
+name: Product release
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'product/**'
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.version-check.outputs.changed }}
+      version: ${{ steps.version-check.outputs.version }}
+      commit: ${{ steps.version-check.outputs.commit }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - id: version-check
+        uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-name: product/package.json
+
+  build-and-deploy:
+    needs: version-check
+    runs-on: ubuntu-latest
+    if: needs.version-check.outputs.changed == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12.18.2"
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+
+      - name: Build product
+        run: |
+          yarn product:build
+
+      - name: Deploy Index file
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          folder: ./.deploy
+          clean: false
+          branch: gh-pages  
+          
+      - name: Deploy product
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          folder: ./product/build
+          branch: gh-pages
+          target-folder: product
+          clean: true
+          clean-exclude: |
+            design-system

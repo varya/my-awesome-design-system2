@@ -1,0 +1,42 @@
+import { ArgsTable, Meta, Canvas, Story } from "@storybook/addon-docs";
+
+import Icon, { icons } from ".";
+import { colors as themeColors } from "../../tokens";
+
+<Meta title="Components/Icon" />
+
+## Icon
+
+SVG icons with customizable color and size, mainly to be used inside the buttons
+
+<Canvas>
+  <Story name="All">
+    {Object.keys(icons).map((icon) => (
+      <Icon key={icon} name={icon} style={{ padding: "1em" }} />
+    ))}
+  </Story>
+  <Story
+    name="Size"
+    argTypes={{
+      name: { control: { type: "select" }, options: Object.keys(icons) },
+    }}
+    args={{ name: "heart", width: 24, height: 24 }}
+  >
+    {(args) => <Icon {...args} />}
+  </Story>
+  <Story
+    name="Colors"
+    argTypes={{
+      name: { control: { type: "select" }, options: Object.keys(icons) },
+      color: { control: { type: "select" }, options: Object.keys(themeColors) },
+    }}
+    args={{ name: "heart", color: "primaryPurple100" }}
+  >
+    {({ name, color, ...args }) => {
+      const colorValue = themeColors[color];
+      return <Icon name={name} color={colorValue} />;
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Icon} />

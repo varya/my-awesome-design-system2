@@ -1,0 +1,1 @@
+Report space for Creevey visual tests 

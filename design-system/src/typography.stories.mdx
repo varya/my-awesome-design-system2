@@ -1,0 +1,32 @@
+import { Meta, Typeset, Story } from '@storybook/addon-docs';
+import { typography } from "./tokens";
+
+<Meta title="Typography" />
+
+# Typography
+
+## Headings
+
+<p><b>Font:</b> {typography.headline1FontFamily}</p>
+<p><b>Weight:</b> {typography.headline1FontWeight}</p>
+
+<Typeset
+  sampleText="Design systems are awesome"
+  fontSizes={Object.entries(typography).filter((e) => e[0].startsWith("headline") && e[0].includes("FontSize") ).map(i => i[1])}
+  fontWeight={typography.headline1FontWeight}
+  fontFamily={Object.entries(typography).filter((e) => e[0].includes("FontFamily")).map(i => i[1])}
+  style={{ letterSpacing: "normal", lineHeight: "48px" }}
+/>
+
+## Paragraphs
+
+<p><b>Font:</b> {typography.paragraph1FontFamily}</p>
+<p><b>Weight:</b> {typography.paragraph1FontWeight}</p>
+
+<Typeset
+  sampleText="Design systems are awesome"
+  fontSizes={Object.entries(typography).filter((e) => e[0].startsWith("paragraph") && e[0].includes("FontSize") ).map(i => i[1])}
+  fontWeight={typography.paragraph1FontWeight}
+  fontFamily={Object.entries(typography).filter((e) => e[0].includes("FontFamily")).map(i => i[1])}
+  style={{ letterSpacing: "normal", lineHeight: "48px" }}
+/>

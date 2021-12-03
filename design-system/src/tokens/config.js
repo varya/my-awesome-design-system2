@@ -31,7 +31,7 @@ module.exports = {
           destination: "typography.js",
           format: "javascript/es6",
           filter: function (prop) {
-            return prop.path[0] === "font";
+            return prop.path[0] === "typography";
           },
         },
         /* Filter and extract color tokens*/
